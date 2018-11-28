@@ -1,4 +1,4 @@
-package com.oc.liza.projet5ocmynews;
+package com.oc.liza.mynews;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

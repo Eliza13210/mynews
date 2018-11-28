@@ -1,4 +1,4 @@
-package com.oc.liza.projet5ocmynews;
+package com.oc.liza.mynews;
 
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
@@ -77,10 +77,15 @@ public class MainActivity extends AppCompatActivity {
             case R.id.search:
                 Intent search=new Intent(MainActivity.this,SearchActivity.class);
                 startActivity(search);
-                //return true;
+                return true;
+
+
             case R.id.action_notifications:
                 // User chose the "Settings" item, show the app settings UI...
+                Intent notification=new Intent(MainActivity.this,NotificationActivity.class);
+                startActivity(notification);
                 return true;
+
 
             case R.id.action_help:
                 // User chose the "Help" action, mark the current item

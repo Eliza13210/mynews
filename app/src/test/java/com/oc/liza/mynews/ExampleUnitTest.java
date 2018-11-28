@@ -1,4 +1,4 @@
-package com.oc.liza.projet5ocmynews;
+package com.oc.liza.mynews;
 
 import org.junit.Test;
 

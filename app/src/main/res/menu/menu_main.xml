@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.oc.liza.projet5ocmynews.MainActivity">
+    tools:context="com.oc.liza.mynews.MainActivity">
     <item android:id="@+id/search"
         android:icon="@drawable/ic_search48"
         android:title="@string/search_title"
