@@ -22,11 +22,13 @@
         <activity
             android:name=".SearchActivity"
             android:label="Search Articles"
-            android:theme="@style/SearchTheme" />
+            android:theme="@style/SearchTheme"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".NotificationActivity"
             android:theme="@style/SearchTheme"
-            android:label="Notifications">
+            android:label="Notifications"
+            android:parentActivityName=".MainActivity">
 
         </activity>
     </application>

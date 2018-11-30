@@ -8,7 +8,8 @@
     tools:context=".SearchActivity"
     android:orientation="vertical"
     >
-
+    <include layout="@layout/toolbar"/>
+    <include layout="@layout/search_query"/>
     <include layout="@layout/checkbox_layout"/>
 
 
@@ -16,7 +17,7 @@
         android:id="@+id/spinner1"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="@dimen/text_size"
         android:layout_marginTop="150dp"
         android:inputType="date"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,14 +34,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView"
+    <TextView android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="@dimen/margin_text"
         android:layout_marginTop="120dp"
         android:alpha=".6"
         android:text="Begin date"
+        android:textSize="@dimen/text_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,6 +53,7 @@
         android:layout_marginStart="200dp"
         android:alpha=".6"
         android:text="End date"
+        android:textSize="@dimen/text_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -61,9 +63,11 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
         android:layout_marginStart="10dp"
-        android:layout_marginBottom="140dp"
+        android:layout_marginBottom="@dimen/button"
+        android:paddingTop="10dp"
         android:text="SEARCH"
         android:elevation="4dp"
+        android:textSize="@dimen/text_size"
         android:background="@color/colorPrimary"
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -7,6 +7,4 @@
 
     <!-- TextView -->
     <dimen name="text_size">12sp</dimen>
-    <dimen name="margin_switch">270dp</dimen>
-    <dimen name="margin_text">10dp</dimen>
 </resources>
