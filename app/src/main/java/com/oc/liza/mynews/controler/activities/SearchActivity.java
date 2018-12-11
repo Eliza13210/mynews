@@ -1,10 +1,12 @@
-package com.oc.liza.mynews;
+package com.oc.liza.mynews.controler.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+
+import com.oc.liza.mynews.R;
 
 public class SearchActivity extends AppCompatActivity {
 
