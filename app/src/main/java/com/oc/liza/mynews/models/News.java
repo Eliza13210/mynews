@@ -30,7 +30,7 @@ public class News {
 
     @SerializedName("multimedia")
     @Expose
-    private ArrayList<String> multimedia;
+    private ArrayList<Object> multimedia;
 
 
     public String getSection() {
@@ -73,11 +73,11 @@ public class News {
         this.url = url;
     }
 
-    public void setMultimedia(ArrayList<String> multimedia) {
+    public void setMultimedia(ArrayList<Object> multimedia) {
         this.multimedia = multimedia;
     }
 
-    public ArrayList<String> getMultimedia() {
+    public ArrayList<Object> getMultimedia() {
         return multimedia;
         ///url to image [0]
     }
