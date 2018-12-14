@@ -5,10 +5,29 @@
     android:orientation="horizontal"
     android:padding="20dip">
 
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        >
     <TextView
         android:id="@+id/fragment_item_title"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_below="@+id/fragment_section"
+         />
+        <TextView
+            android:id="@+id/fragment_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fragment_item_title"/>
+        <TextView
+            android:id="@+id/fragment_section"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            />
+
+    </RelativeLayout>
 
 </LinearLayout>

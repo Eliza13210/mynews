@@ -12,7 +12,11 @@ import butterknife.ButterKnife;
 
 public class NewsViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.fragment_item_title)
-    TextView textView;
+    TextView title;
+    @BindView(R.id.fragment_date)
+    TextView date;
+    @BindView(R.id.fragment_section)
+    TextView section;
 
     public NewsViewHolder(View itemView) {
         super(itemView);
@@ -20,6 +24,8 @@ public class NewsViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void updateWithNewsItem(News newsItem) {
-        this.textView.setText(newsItem.getTitle());
+        this.title.setText(newsItem.getTitle());
+        this.date.setText(newsItem.getPublished_date().toString());
+        this.section.setText(newsItem.getSection() + " > " + newsItem.getSubsection());
     }
 }
