@@ -15,6 +15,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsViewHolder> {
 
     // FOR DATA
     private List<News> news;
+    private  Context context;
 
     // CONSTRUCTOR
     public NewsAdapter(List<News> news) {
@@ -24,7 +25,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsViewHolder> {
     @Override
     public NewsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // CREATE VIEW HOLDER AND INFLATING ITS XML LAYOUT
-        Context context = parent.getContext();
+        context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.fragment_item, parent, false);
 
@@ -34,7 +35,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsViewHolder> {
     // UPDATE VIEW HOLDER WITH A NEWS ITEM
     @Override
     public void onBindViewHolder(NewsViewHolder viewHolder, int position) {
-        viewHolder.updateWithNewsItem(this.news.get(position));
+        viewHolder.updateWithNewsItem(this.news.get(position), context);
     }
 
     // RETURN THE TOTAL COUNT OF ITEMS IN THE LIST

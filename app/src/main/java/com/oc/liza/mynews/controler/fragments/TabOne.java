@@ -1,5 +1,6 @@
 package com.oc.liza.mynews.controler.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -25,7 +26,6 @@ import butterknife.ButterKnife;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.observers.DisposableObserver;
 
-import static java.util.Collections.addAll;
 
 public class TabOne extends Fragment {
     // FOR DESIGN
@@ -58,7 +58,7 @@ public class TabOne extends Fragment {
         this.newsList = new ArrayList<>();
         // 3.2 - Create adapter passing the list of users
         this.adapter = new NewsAdapter(this.newsList);
-        // 3.3 - Attach the adapter to the recyclerview to populate items
+        // 3.3 - Attach the adapter to the recycler view to populate items
         this.recyclerView.setAdapter(this.adapter);
         // 3.4 - Set layout manager to position the items
         this.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -103,7 +103,6 @@ public class TabOne extends Fragment {
 
     private void updateUIWithListOfNews(NewsObject news) {
         newsList.addAll(news.getResults());
-
         adapter.notifyDataSetChanged();
     }
 

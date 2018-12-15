@@ -3,8 +3,11 @@ package com.oc.liza.mynews.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+
+import retrofit2.http.Url;
 
 public class News {
 
@@ -30,7 +33,7 @@ public class News {
 
     @SerializedName("multimedia")
     @Expose
-    private ArrayList<Object> multimedia;
+    private ArrayList<NewsImage> multimedia;
 
 
     public String getSection() {
@@ -57,8 +60,8 @@ public class News {
         this.title = title;
     }
 
-    public Date getPublished_date() {
-        return published_date;
+    public String getPublished_date() {
+        return DateFormat.getDateInstance(DateFormat.SHORT).format(published_date);
     }
 
     public void setPublished_date(Date published_date) {
@@ -73,11 +76,11 @@ public class News {
         this.url = url;
     }
 
-    public void setMultimedia(ArrayList<Object> multimedia) {
+    public void setMultimedia(ArrayList<NewsImage> multimedia) {
         this.multimedia = multimedia;
     }
 
-    public ArrayList<Object> getMultimedia() {
+    public ArrayList<NewsImage> getMultimedia() {
         return multimedia;
         ///url to image [0]
     }
