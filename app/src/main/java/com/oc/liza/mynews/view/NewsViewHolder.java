@@ -12,7 +12,6 @@ import com.oc.liza.mynews.R;
 import com.oc.liza.mynews.models.News;
 import com.oc.liza.mynews.models.NewsImage;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -36,14 +35,13 @@ public class NewsViewHolder extends RecyclerView.ViewHolder {
     public void updateWithNewsItem(News newsItem, Context context) {
         this.title.setText(newsItem.getTitle());
         this.date.setText(newsItem.getPublished_date());
+        this.section.setText(newsItem.toString());
         try {
-            this.section.setText(newsItem.getSection() + " > " + newsItem.getSubsection());
-            List<NewsImage> images = newsItem.getMultimedia();
-            String url = images.get(0).getUrl();
+            String url = newsItem.getImageUrl();
             Glide.with(context)
                     .load(url)
                     .into(thumbnail);
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             Log.e("exception", "error " + e);
         }

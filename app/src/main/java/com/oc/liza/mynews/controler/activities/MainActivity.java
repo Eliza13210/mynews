@@ -9,23 +9,12 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-
-import android.widget.TextView;
-
 import com.oc.liza.mynews.R;
-import com.oc.liza.mynews.controler.fragments.TabOne;
-import com.oc.liza.mynews.TabThree;
-import com.oc.liza.mynews.TabTwo;
 import com.oc.liza.mynews.utils.SectionsPagerAdapter;
 
 import butterknife.BindView;

@@ -35,6 +35,10 @@ public class News {
     @Expose
     private ArrayList<NewsImage> multimedia;
 
+    @SerializedName("media")
+    @Expose
+    private ArrayList<NewsImage> media;
+
 
     public String getSection() {
         return section;
@@ -81,8 +85,33 @@ public class News {
     }
 
     public ArrayList<NewsImage> getMultimedia() {
+        /** if (multimedia.isEmpty()) {
+         return media;
+         } else {*/
         return multimedia;
-        ///url to image [0]
+
+
     }
 
+    public ArrayList<NewsImage> getMedia() {
+        return media;
+    }
+
+    public String getImageUrl() {
+        try {
+            return multimedia.get(0).getUrl();
+        } catch (Exception e) {
+            return media.get(0).getMetadata().get(0).getUrl();
+        }
+    }
+
+    public String toString() {
+        String str = "";
+        if (subsection != null) {
+            str += section + " > " + subsection;
+        } else {
+            str += section;
+        }
+        return str;
+    }
 }

@@ -41,12 +41,13 @@ public class TabOne extends Fragment {
     private String url;
 
     public static TabOne newInstance(int position) {
-        TabOne tabOne=new TabOne();
-        Bundle bundle=new Bundle();
-        bundle.putInt("position",position);
+        TabOne tabOne = new TabOne();
+        Bundle bundle = new Bundle();
+        bundle.putInt("position", position);
         tabOne.setArguments(bundle);
         return tabOne;
     }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

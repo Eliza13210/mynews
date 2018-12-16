@@ -4,8 +4,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.oc.liza.mynews.TabThree;
-import com.oc.liza.mynews.TabTwo;
 import com.oc.liza.mynews.controler.fragments.TabOne;
 
 /**
@@ -28,9 +26,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 return TabOne.newInstance(position);
             case 1:
                 return TabOne.newInstance(position);
-            case 2:
-                TabThree tabThree = new TabThree();
-                return tabThree;
+
             default:
                 return null;
         }
@@ -39,6 +35,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         // Show 3 total pages.
-        return 3;
+        return 2;
     }
 }
