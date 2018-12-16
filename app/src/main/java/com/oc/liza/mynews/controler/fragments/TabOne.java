@@ -37,8 +37,20 @@ public class TabOne extends Fragment {
     // 2 - Declare list of news (News) & Adapter
     private List<News> newsList;
     private NewsAdapter adapter;
+    private int position;
+    private String url;
 
-    public TabOne() {
+    public static TabOne newInstance(int position) {
+        TabOne tabOne=new TabOne();
+        Bundle bundle=new Bundle();
+        bundle.putInt("position",position);
+        tabOne.setArguments(bundle);
+        return tabOne;
+    }
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        position = getArguments().getInt("position", 0);
     }
 
     @Nullable
@@ -66,10 +78,20 @@ public class TabOne extends Fragment {
 
     // 1 - Execute our Stream
     private void executeHttpRequestWithRetrofit() {
+
+        switch (position) {
+            case 0:
+                url = this.getResources().getString(R.string.topstories);
+                break;
+            case 1:
+                url = this.getResources().getString(R.string.mostpopular);
+                break;
+        }
+
         // 1.1 - Update UI
         this.updateUIWhenStartingHTTPRequest();
         // 1.2 - Execute the stream subscribing to Observable defined inside NewsStream
-        this.disposable = NewsStream.streamFetchNewslist(this.getResources().getString(R.string.topstories)).subscribeWith(new DisposableObserver<NewsObject>() {
+        this.disposable = NewsStream.streamFetchNewslist(url).subscribeWith(new DisposableObserver<NewsObject>() {
             @Override
             public void onNext(NewsObject news) {
                 Log.e("TAG", "On Next");

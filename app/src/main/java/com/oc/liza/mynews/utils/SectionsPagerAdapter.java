@@ -25,11 +25,9 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         switch (position) {
             case 0:
-                TabOne tabOne = new TabOne();
-                return tabOne;
+                return TabOne.newInstance(position);
             case 1:
-                TabTwo tabTwo = new TabTwo();
-                return tabTwo;
+                return TabOne.newInstance(position);
             case 2:
                 TabThree tabThree = new TabThree();
                 return tabThree;

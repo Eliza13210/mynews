@@ -85,9 +85,4 @@ public class News {
         ///url to image [0]
     }
 
-    public String toString() {
-
-        return title;
-    }
-
 }
