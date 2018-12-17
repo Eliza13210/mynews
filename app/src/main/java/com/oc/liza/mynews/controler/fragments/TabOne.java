@@ -1,6 +1,7 @@
 package com.oc.liza.mynews.controler.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,6 +12,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.oc.liza.mynews.R;
 import com.oc.liza.mynews.models.News;
@@ -31,6 +35,7 @@ public class TabOne extends Fragment {
     // FOR DESIGN
     @BindView(R.id.fragment_view)
     RecyclerView recyclerView; // 1 - Declare RecyclerView
+
 
     //FOR DATA
     private Disposable disposable;

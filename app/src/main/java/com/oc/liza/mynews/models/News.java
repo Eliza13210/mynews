@@ -3,11 +3,13 @@ package com.oc.liza.mynews.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.net.URL;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
 import retrofit2.http.Url;
+
 
 public class News {
 
@@ -73,6 +75,7 @@ public class News {
     }
 
     public String getUrl() {
+        url=url.substring(5);
         return url;
     }
 
@@ -85,12 +88,7 @@ public class News {
     }
 
     public ArrayList<NewsImage> getMultimedia() {
-        /** if (multimedia.isEmpty()) {
-         return media;
-         } else {*/
         return multimedia;
-
-
     }
 
     public ArrayList<NewsImage> getMedia() {

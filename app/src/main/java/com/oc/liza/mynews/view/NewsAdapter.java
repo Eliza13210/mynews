@@ -5,17 +5,25 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 
 import com.oc.liza.mynews.R;
 import com.oc.liza.mynews.models.News;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.Optional;
+import io.reactivex.annotations.Nullable;
+
 public class NewsAdapter extends RecyclerView.Adapter<NewsViewHolder> {
+    @Nullable
+    @BindView(R.id.webView)
+    WebView webView;
 
     // FOR DATA
     private List<News> news;
-    private  Context context;
+    private Context context;
 
     // CONSTRUCTOR
     public NewsAdapter(List<News> news) {
