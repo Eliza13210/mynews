@@ -20,5 +20,10 @@
     <string name="topstories">https://api.nytimes.com/svc/topstories/v2/home.json?&amp;api-key=799e9f0e6e264b3a8e21b57f3f05dfd0</string>
     <string name="mostpopular">https://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/7.json?&amp;api-key=799e9f0e6e264b3a8e21b57f3f05dfd0</string>
 
+    <string name="health">Health</string>
+    <string name="movies">Movies</string>
+    <string name="books">Books</string>
+    <string name="science">Science</string>
+
 
 </resources>

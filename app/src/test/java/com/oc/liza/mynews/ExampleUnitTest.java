@@ -1,5 +1,6 @@
 package com.oc.liza.mynews;
 
+import com.oc.liza.mynews.models.News;
 import com.oc.liza.mynews.models.NewsObject;
 import com.oc.liza.mynews.utils.NewsStream;
 

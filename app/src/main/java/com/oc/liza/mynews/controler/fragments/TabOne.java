@@ -1,20 +1,14 @@
 package com.oc.liza.mynews.controler.fragments;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.oc.liza.mynews.R;
 import com.oc.liza.mynews.models.News;
@@ -94,14 +88,11 @@ public class TabOne extends Fragment {
                 break;
         }
 
-        // 1.1 - Update UI
-        this.updateUIWhenStartingHTTPRequest();
-        // 1.2 - Execute the stream subscribing to Observable defined inside NewsStream
+        //- Execute the stream subscribing to Observable defined inside NewsStream
         this.disposable = NewsStream.streamFetchNewslist(url).subscribeWith(new DisposableObserver<NewsObject>() {
             @Override
             public void onNext(NewsObject news) {
-                Log.e("TAG", "On Next");
-                // 1.3 - Update UI with list of news
+                // - Update UI with list of news
                 updateUIWithListOfNews(news);
             }
 
@@ -112,7 +103,6 @@ public class TabOne extends Fragment {
 
             @Override
             public void onComplete() {
-                Log.e("TAG", "On Complete !!");
             }
         });
     }
@@ -124,10 +114,6 @@ public class TabOne extends Fragment {
     // -------------------
     // UPDATE UI
     // -------------------
-
-    private void updateUIWhenStartingHTTPRequest() {
-    }
-
 
     private void updateUIWithListOfNews(NewsObject news) {
         newsList.addAll(news.getResults());

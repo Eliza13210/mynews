@@ -7,17 +7,10 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.oc.liza.mynews.R;
 import com.oc.liza.mynews.models.News;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

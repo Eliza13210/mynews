@@ -75,7 +75,8 @@ public class News {
     }
 
     public String getUrl() {
-        url=url.substring(5);
+        //remove https from url
+        url = url.substring(5);
         return url;
     }
 
