@@ -106,7 +106,7 @@ public class News {
 
     public String toString() {
         String str = "";
-        if (subsection != null) {
+        if (subsection!=null && subsection.length()>1) {
             str += section + " > " + subsection;
         } else {
             str += section;

@@ -68,7 +68,7 @@ public class TabOne extends Fragment {
     private void configureRecyclerView() {
         // 3.1 - Reset list
         this.newsList = new ArrayList<>();
-        // 3.2 - Create adapter passing the list of users
+        // 3.2 - Create adapter passing the list of news
         this.adapter = new NewsAdapter(this.newsList);
         // 3.3 - Attach the adapter to the recycler view to populate items
         this.recyclerView.setAdapter(this.adapter);
@@ -86,6 +86,14 @@ public class TabOne extends Fragment {
             case 1:
                 url = this.getResources().getString(R.string.mostpopular);
                 break;
+            case 2:
+                url = this.getResources().getString(R.string.sciencenews);
+                break;
+            case 3:
+                url = this.getResources().getString(R.string.healthnews);
+                break;
+            case 4:
+                url = this.getResources().getString(R.string.moviesnews);
         }
 
         //- Execute the stream subscribing to Observable defined inside NewsStream
