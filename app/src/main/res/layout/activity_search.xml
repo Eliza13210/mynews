@@ -7,6 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".controler.activities.SearchActivity"
     android:orientation="vertical"
+    android:background="@color/colorWhite"
     >
     <include layout="@layout/toolbar"/>
     <include layout="@layout/search_query"/>
@@ -58,7 +59,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/search_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
