@@ -14,6 +14,7 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
 import com.oc.liza.mynews.R;
 import com.oc.liza.mynews.utils.SectionsPagerAdapter;
 
@@ -35,14 +36,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     /**
      * The {@link ViewPager} that will host the section contents.
      */
-    private DrawerLayout mDrawerLayout;
-    private NavigationView mNavigationView;
     @BindView(R.id.container)
     ViewPager mViewPager;
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
     @BindView(R.id.tabs)
     TabLayout mTabLayout;
+    @BindView(R.id.activity_main_drawer_layout)
+    DrawerLayout mDrawerLayout;
+    @BindView(R.id.activity_main_nav_view)
+    NavigationView mNavigationView;
 
 
     @Override
@@ -73,7 +76,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     // Configure Drawer Layout
     private void configureDrawerLayout() {
-        this.mDrawerLayout = (DrawerLayout) findViewById(R.id.activity_main_drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         mDrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
@@ -91,33 +93,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     // 3 - Configure NavigationView
     private void configureNavigationView() {
-        this.mNavigationView = (NavigationView) findViewById(R.id.activity_main_nav_view);
         mNavigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 
-        // 4 - Handle Navigation Item Click
-        int id = item.getItemId();
-
-        switch (id) {
-            case R.id.search:
-                Intent search = new Intent(MainActivity.this, SearchActivity.class);
-                startActivity(search);
-                break;
-            case R.id.action_notifications:
-                Intent notification = new Intent(MainActivity.this, NotificationActivity.class);
-                startActivity(notification);
-                break;
-            case R.id.action_about:
-                break;
-            default:
-                break;
-        }
+        startActivity(item);
 
         this.mDrawerLayout.closeDrawer(GravityCompat.START);
-
         return true;
     }
 
@@ -134,35 +118,40 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+        startActivity(item);
+        return true;
+    }
+
+    private void startActivity(MenuItem item) {
         int id = item.getItemId();
 
-        switch (item.getItemId()) {
+        switch (id) {
             case R.id.search:
                 Intent search = new Intent(MainActivity.this, SearchActivity.class);
                 startActivity(search);
-                return true;
+                break;
 
 
             case R.id.action_notifications:
                 // User chose the "Settings" item, show the app settings UI...
                 Intent notification = new Intent(MainActivity.this, NotificationActivity.class);
                 startActivity(notification);
-                return true;
+                break;
 
 
             case R.id.action_help:
                 // User chose the "Help" action, mark the current item
                 // as a favorite...
-                return true;
+                break;
             case R.id.action_about:
                 // User chose the "About" action, mark the current item
                 // as a favorite...
-                return true;
+                break;
 
             default:
                 // If we got here, the user's action was not recognized.
                 // Invoke the superclass to handle it.
-                return super.onOptionsItemSelected(item);
+                super.onOptionsItemSelected(item);
 
         }
     }
