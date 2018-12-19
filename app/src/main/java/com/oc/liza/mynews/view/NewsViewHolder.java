@@ -43,7 +43,7 @@ public class NewsViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
                 webView = new WebView(context);
-                webView.loadUrl("http" + newsItem.getUrl());
+                webView.loadUrl(newsItem.getUrl());
             }
         });
         try {

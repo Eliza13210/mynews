@@ -18,6 +18,10 @@ public class NewsImage {
         return metadata;
     }
 
+    public void setMetadata(ArrayList<MediaImage> metadata) {
+        this.metadata = metadata;
+    }
+
     public String getUrl() {
         return url;
     }

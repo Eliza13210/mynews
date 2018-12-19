@@ -75,8 +75,11 @@ public class News {
     }
 
     public String getUrl() {
-        //remove https from url
-        url = url.substring(5);
+        if (url.startsWith("https")) {
+            //replace https with http in url
+            url = url.substring(5);
+            url = "http" + url;
+        }
         return url;
     }
 
@@ -96,6 +99,10 @@ public class News {
         return media;
     }
 
+    public void setMedia(ArrayList<NewsImage> media) {
+        this.media = media;
+    }
+
     public String getImageUrl() {
         try {
             return multimedia.get(0).getUrl();
@@ -106,7 +113,7 @@ public class News {
 
     public String toString() {
         String str = "";
-        if (subsection!=null && subsection.length()>1) {
+        if (subsection != null && subsection.length() > 1) {
             str += section + " > " + subsection;
         } else {
             str += section;

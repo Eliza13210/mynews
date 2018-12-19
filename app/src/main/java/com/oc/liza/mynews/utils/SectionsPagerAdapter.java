@@ -19,7 +19,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         // getItem is called to instantiate the fragment for the given page.
-
                 return TabOne.newInstance(position);
 
     }
