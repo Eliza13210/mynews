@@ -50,6 +50,7 @@ public class TabOne extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        assert getArguments() != null;
         position = getArguments().getInt("position", 0);
     }
 
