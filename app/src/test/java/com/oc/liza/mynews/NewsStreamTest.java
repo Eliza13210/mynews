@@ -4,8 +4,6 @@ import android.os.Bundle;
 
 import com.oc.liza.mynews.controler.activities.MainActivity;
 import com.oc.liza.mynews.controler.fragments.TabOne;
-import com.oc.liza.mynews.models.News;
-import com.oc.liza.mynews.models.NewsImage;
 import com.oc.liza.mynews.models.NewsObject;
 import com.oc.liza.mynews.utils.NewsStream;
 
@@ -13,24 +11,18 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import static com.oc.liza.mynews.utils.NewsStream.streamFetchNewslist;
-import static org.mockito.Mockito.*;
-
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.Callable;
 
 import io.reactivex.Observable;
 import io.reactivex.Scheduler;
 import io.reactivex.android.plugins.RxAndroidPlugins;
-import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Function;
-import io.reactivex.observers.DisposableObserver;
 import io.reactivex.observers.TestObserver;
 import io.reactivex.schedulers.Schedulers;
 
@@ -98,21 +90,21 @@ public class NewsStreamTest {
         //- Execute the stream subscribing to Observable defined inside NewsStream
         NewsStream.streamFetchNewslist("https://api.nytimes.com/svc/topstories/v2/home.json?&api-key=799e9f0e6e264b3a8e21b57f3f05dfd0")
                 .subscribeWith(new TestObserver<NewsObject>() {
-            @Override
-            public void onNext(NewsObject news) {
-                // - Update UI with list of news
-                newsList.add(news);
-            }
+                    @Override
+                    public void onNext(NewsObject news) {
+                        // - Update UI with list of news
+                        newsList.add(news);
+                    }
 
-            @Override
-            public void onError(Throwable e) {
+                    @Override
+                    public void onError(Throwable e) {
 
-            }
+                    }
 
-            @Override
-            public void onComplete() {
-            }
-        });
+                    @Override
+                    public void onComplete() {
+                    }
+                });
     }
 
     @Test

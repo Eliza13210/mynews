@@ -2,28 +2,30 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:baselineAligned="false"
     android:orientation="horizontal"
     android:paddingTop="10dp">
 
-
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.5"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingEnd="10dp">
 
-        <CheckBox
-            android:id="@+id/cbScience"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/science" />
+            android:alpha=".6"
+            android:text="@string/begin_date"
+            android:textSize="@dimen/text_size" />
 
-        <CheckBox
-            android:id="@+id/cbMovies"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/begin_date"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/movies" />
+            android:hint="@string/date_ex"
+            android:inputType="date"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -32,12 +34,19 @@
         android:layout_weight="0.5"
         android:orientation="vertical">
 
-        <CheckBox
-            android:id="@+id/cbHealth"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/health"
+            android:alpha=".6"
+            android:text="@string/end_date"
+            android:textSize="@dimen/text_size" />
+
+        <EditText
+            android:id="@+id/end_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+
             />
     </LinearLayout>
-
 </LinearLayout>

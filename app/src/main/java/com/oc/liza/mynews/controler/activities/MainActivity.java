@@ -1,6 +1,7 @@
 package com.oc.liza.mynews.controler.activities;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
@@ -9,7 +10,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.Menu;
@@ -23,19 +23,6 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-     */
-    private SectionsPagerAdapter mSectionsPagerAdapter;
-
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
     @BindView(R.id.container)
     ViewPager mViewPager;
     @BindView(R.id.toolbar)
@@ -62,13 +49,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void initMain() {
 
         setSupportActionBar(mToolbar);
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
-        mViewPager.setAdapter(mSectionsPagerAdapter);
-
+        mViewPager.setAdapter(sectionsPagerAdapter);
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
         mTabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
@@ -97,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
         startActivity(item);
 
@@ -130,15 +114,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent search = new Intent(MainActivity.this, SearchActivity.class);
                 startActivity(search);
                 break;
-
-
             case R.id.action_notifications:
                 // User chose the "Settings" item, show the app settings UI...
                 Intent notification = new Intent(MainActivity.this, NotificationActivity.class);
                 startActivity(notification);
                 break;
-
-
             case R.id.action_help:
                 // User chose the "Help" action, mark the current item
                 // as a favorite...
@@ -147,14 +127,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 // User chose the "About" action, mark the current item
                 // as a favorite...
                 break;
-
             default:
                 // If we got here, the user's action was not recognized.
                 // Invoke the superclass to handle it.
                 super.onOptionsItemSelected(item);
-
         }
     }
-
-
 }

@@ -1,79 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".controler.activities.SearchActivity"
     android:orientation="vertical"
-    android:background="@color/colorWhite"
-    >
-    <include layout="@layout/toolbar"/>
-    <include layout="@layout/search_query"/>
-    <include layout="@layout/checkbox_layout"/>
+    android:background="@color/colorWhite">
 
-
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/text_size"
-        android:layout_marginTop="150dp"
-        android:inputType="date"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="@tools:sample/date/ddmmyy" />
-
-    <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="150dp"
-        android:inputType="date"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_text"
-        android:layout_marginTop="120dp"
-        android:alpha=".6"
-        android:text="Begin date"
-        android:textSize="@dimen/text_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:layout_marginStart="200dp"
-        android:alpha=".6"
-        android:text="End date"
-        android:textSize="@dimen/text_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/search_button"
+    <include
+        layout="@layout/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginStart="10dp"
-        android:layout_marginBottom="@dimen/button"
-        android:paddingTop="10dp"
-        android:text="SEARCH"
-        android:elevation="4dp"
-        android:textSize="@dimen/text_size"
-        android:background="@color/colorPrimary"
-        android:textColor="@color/colorWhite"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical">
 
+        <include
+            layout="@layout/search_query"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
+        <include layout="@layout/date_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-</android.support.constraint.ConstraintLayout>
+        <include
+            layout="@layout/checkbox_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/search_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:elevation="4dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/search"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size" />
+
+    </LinearLayout>
+</LinearLayout>

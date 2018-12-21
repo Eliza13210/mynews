@@ -28,6 +28,10 @@
     <string name="movies">Movies</string>
     <string name="books">Books</string>
     <string name="science">Science</string>
+    <string name="begin_date">Begin date</string>
+    <string name="end_date">End date</string>
+    <string name="date_ex">12/12/2012</string>
+    <string name="search">SEARCH</string>
 
 
 </resources>
