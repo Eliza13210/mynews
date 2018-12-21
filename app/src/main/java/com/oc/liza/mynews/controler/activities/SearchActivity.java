@@ -28,9 +28,17 @@ public class SearchActivity extends AppCompatActivity {
     Button searchButton;
     @BindView(R.id.query)
     EditText search_query;
+    @BindView(R.id.begin_date)
+    EditText search_begin_date;
+    @BindView(R.id.end_date)
+    EditText search_end_date;
 
-    private Context ctx=this;
+    Context ctx = this;
     String query;
+    String begin_date = "";
+    String end_date = "";
+
+    String url = ctx.getResources().getString(R.string.article_search);
 
 
     @Override
@@ -58,7 +66,9 @@ public class SearchActivity extends AppCompatActivity {
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                query= search_query.getText().toString();
+                query = search_query.getText().toString();
+                begin_date = search_begin_date.getText().toString();
+                end_date = search_end_date.getText().toString();
                 setUrl();
             }
         });
@@ -67,8 +77,15 @@ public class SearchActivity extends AppCompatActivity {
 
     public void setUrl() {
 
+        url += "&amp;q=" + query;
+
+        if (!begin_date.isEmpty()) {
+            url += "&amp;begin_date" + begin_date;
+        } else if (end_date.isEmpty()) {
+            url += "&amp;end_date" + end_date;
+        }
     }
 
-    public void getDate(){
+    public void getDate() {
     }
 }

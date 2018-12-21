@@ -22,6 +22,7 @@
     <string name="sciencenews">https://api.nytimes.com/svc/topstories/v2/science.json?&amp;api-key=799e9f0e6e264b3a8e21b57f3f05dfd0</string>
     <string name="healthnews" >https://api.nytimes.com/svc/topstories/v2/health.json?&amp;api-key=799e9f0e6e264b3a8e21b57f3f05dfd0</string>
     <string name="moviesnews">https://api.nytimes.com/svc/topstories/v2/movies.json?&amp;api-key=799e9f0e6e264b3a8e21b57f3f05dfd0</string>
+    <string name="article_search">https://api.nytimes.com/svc/search/v2/articlesearch.json?&amp;api-key=799e9f0e6e264b3a8e21b57f3f05dfd0</string>
 
     //checkbox
     <string name="health">Health</string>
