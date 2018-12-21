@@ -46,7 +46,16 @@ public class SearchActivityTest {
 
     @Test
     public void setSearchUrl_WithSearchQueryAndDate_ReturnStringWithQuery(){
+        SearchActivity searchActivity=Mockito.spy(SearchActivity.class);
+        searchActivity.ctx=mockContext;
+        searchActivity.query="Electric cars";
+        searchActivity.begin_date="20000101";
 
-         }
+        searchActivity.setUrl();
+        String url=searchActivity.url;
+        assertEquals("https://api.nytimes.com/svc/search/v2/articlesearch.json?&api-key=799e9f0e6e264b3a8e21b57f3f05dfd0&q=electric%20cars&begin_date=20000101", url);
+
+
+    }
 
 }
