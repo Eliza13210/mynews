@@ -38,7 +38,7 @@ public class SearchActivity extends AppCompatActivity {
     String begin_date = "";
     String end_date = "";
 
-    String url = ctx.getResources().getString(R.string.article_search);
+    String url = "";
 
 
     @Override
@@ -46,6 +46,7 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         ButterKnife.bind(this);
+        url=this.getResources().getString(R.string.article_search);
         initLayout();
     }
 
